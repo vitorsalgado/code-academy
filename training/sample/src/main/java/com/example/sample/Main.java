@@ -9,6 +9,7 @@ final class Main {
   }
 
   public static void oi_231nkjdsnkj() {
+    System.out.println("SAMPLE");
     throw new NullPointerException();
   }
 
