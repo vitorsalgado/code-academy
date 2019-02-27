@@ -1,14 +1,9 @@
 language: node_js
 
-sudo: required
-
-services:
-  - docker
-
 jobs:
   include:
     - stage: core
-      if: branch = master
+      if: branch = master AND type != pull_request
       script:
         - echo "CORE HERE"
 
@@ -18,4 +13,4 @@ jobs:
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
         - echo $TRAVIS_PULL_REQUEST_BRANCH
         - echo $TRAINING
-        - node training/$TRAINING/index.js
+        - cd training/$TRAINING && node training/$TRAINING/evaluate-training
