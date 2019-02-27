@@ -5,22 +5,17 @@ sudo: required
 services:
   - docker
 
-script:
-  - npm install
-
-stages:
-  - name: core
-    if: branch = master
-  - name: training
-    if: type = pull_request AND fork = true
-
 jobs:
   include:
     - stage: core
+      if: branch = master
       script:
         - echo "CORE HERE"
 
     - stage: training
+      if: type = pull_request
       script:
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
+        - echo $TRAVIS_PULL_REQUEST_BRANCH
+        - echo $TRAINING
         - node training/$TRAINING/index.js
