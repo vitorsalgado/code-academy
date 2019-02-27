@@ -1,6 +1,6 @@
 'use strict'
 
-const ChildProcess = require('child_process')
-const exec = ChildProcess.execSync
+const Spawn = require('child_process').spawn
+const SHELL_OPTIONS = { stdio: 'inherit', shell: true }
 
-module.exports = () => exec('./gradlew check')
+module.exports = () => Spawn('./gradlew', ['check'], SHELL_OPTIONS)
