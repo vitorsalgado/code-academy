@@ -1,0 +1,35 @@
+# <TYPE>(OPTIONAL_SCOPE): <COMMIT_SUBJECT>
+# <BLANK_LINE>
+# [optional body] If you need to provide more information to your commit, use the body section
+# <BLANK_LINE>
+# [optional footer] Additional information like Jira Issues Codes related to this change
+
+# --- COMMIT END ---
+
+# Samples
+# feat(lang): added polish language
+# fix: minor typos in code
+
+# TYPE can be
+#    feat               (new feature)
+#    fix                (bug fix)
+#    refactor           (code refactoring)
+#    style              (formatting, missing semi colons, etc...)
+#    docs               (changes to documentation)
+#    test               (adding or refactoring tests)
+#    BREAKING CHANGE    (breaking changes in code base)
+#
+# --------------------
+#
+# About the COMMIT_SUBJECT, remember to
+#    Capitalize the subject
+#    Use the imperative mood in the subject line
+#    Do not end the subject line with a period
+#    Separate subject from body with a blank line
+#    Use the body to explain what and why vs. how
+#
+# --------------------
+#
+# For more information, check out
+# https://conventionalcommits.org/
+# https://keepachangelog.com/en/1.0.0/

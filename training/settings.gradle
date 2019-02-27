@@ -1,0 +1,3 @@
+rootProject.name = 'Code Academy Training'
+
+include ':sample'

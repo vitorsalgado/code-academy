@@ -1,0 +1,26 @@
+language: node_js
+
+sudo: required
+
+services:
+  - docker
+
+script:
+  - npm install
+
+stages:
+  - name: core
+    if: branch = master
+  - name: training
+    if: type = pull_request AND fork = true
+
+jobs:
+  include:
+    - stage: core
+      script:
+        - echo "CORE HERE"
+
+    - stage: training
+      script:
+        - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
+        - node training/$TRAINING/index.js
