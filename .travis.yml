@@ -13,4 +13,4 @@ jobs:
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
         - echo $TRAVIS_PULL_REQUEST_BRANCH
         - echo $TRAINING
-        - cd training/$TRAINING && node training/$TRAINING/evaluate-training
+        - cd training/$TRAINING && node evaluate-training
