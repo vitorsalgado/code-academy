@@ -8,6 +8,8 @@ jobs:
         - echo "CORE HERE"
 
     - stage: training
+      language: java
+      jdk: openjdk-8
       if: type = pull_request
       script:
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
