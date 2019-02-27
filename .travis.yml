@@ -9,7 +9,7 @@ jobs:
 
     - stage: training
       language: java
-      jdk: openjdk-8
+      jdk: openjdk8
       if: type = pull_request
       script:
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
