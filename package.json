@@ -1,11 +1,9 @@
 {
   "name": "code-academy",
   "version": "1.0.0",
-  "description": "Repository dedicated for anyone whilling to improve your knowledges in software development, architecture, design patterns, tests and so on.   Currently, this coding academy will be focused in backend, specially Java.   Keep reading to know how to apply for trainings and how to contribute to this academy core.",
+  "description": "Repository dedicated for anyone willing to improve your knowledge in software development, architecture, design patterns, tests and so on.   Currently, this coding academy will be focused in backend, specially Java.   Keep reading to know how to apply for trainings and how to contribute to this academy core.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "node --nolazy --inspect-brk=9229 index.js"
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,7 @@ ext {
 }
 
 def qualityConfigDir = "$project.rootDir/.support"
-def reportsDir = "$project.buildDir/.support"
+def reportsDir = "$project.rootDir/__reports__"
 
 check.dependsOn 'checkstyle', 'pmd'
 
