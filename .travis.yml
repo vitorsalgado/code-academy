@@ -23,9 +23,6 @@ before_install:
   - npm ci
   - npm i cloc -g
 
-script:
-  - ./gradlew build --scan -s
-
 jobs:
   include:
     - stage: core
@@ -46,5 +43,5 @@ jobs:
         - cloc $TRAINING
 
         # Pre evaluate training
-        - ./gradlew :$TRAINING check
+        - ./index.js evaluate $TRAINING
         # - cd $TRAINING && node evaluate-training

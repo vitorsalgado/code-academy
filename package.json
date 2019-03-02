@@ -18,5 +18,7 @@
     "url": "https://github.com/vitorsalgado/code-academy/issues"
   },
   "homepage": "https://github.com/vitorsalgado/code-academy#readme",
-  "dependencies": {}
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
 }
