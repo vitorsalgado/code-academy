@@ -46,4 +46,5 @@ jobs:
         - cloc $TRAINING
 
         # Pre evaluate training
-        - cd $TRAINING && node evaluate-training
+        - ./gradlew :$TRAINING check
+        # - cd $TRAINING && node evaluate-training
