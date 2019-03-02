@@ -1,18 +1,43 @@
-language: node_js
+language: java
+
+jdk: openjdk11
+
+services:
+  - docker
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  npm: true
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+before_install:
+  - sudo apt install cloc -y
+  - nvm install $(cat .nvmrc)
+  - nvm use
+  - npm ci
 
 jobs:
   include:
     - stage: core
-      if: branch = master AND type != pull_request
+      name: "Training Core Contributions"
+      if: branch = master AND type != pull_request AND fork = false
       script:
-        - echo "CORE HERE"
+        - ./gradlew check --info
 
     - stage: training
-      language: java
-      jdk: openjdk8
+      name: "Completed Training Evaluation"
       if: type = pull_request
       script:
+        # Capture the chosen training by the feature branch name, which must be the same
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
-        - echo $TRAVIS_PULL_REQUEST_BRANCH
-        - echo $TRAINING
+        - echo "Pre Evaluation and Stastistics for $TRAINING"
+
+        # General training code statistics
+        - cloc $TRAINING
+
+        # Pre evaluate training
         - cd $TRAINING && node evaluate-training
