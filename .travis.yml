@@ -15,10 +15,10 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_install:
-  - sudo apt install cloc -y
   - nvm install $(cat .nvmrc)
   - nvm use
   - npm ci
+  - npm i cloc -g
 
 jobs:
   include:
