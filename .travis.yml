@@ -15,10 +15,16 @@ cache:
     - $HOME/.gradle/wrapper/
 
 before_install:
+  - rm "${JAVA_HOME}/lib/security/cacerts"
+  - ln -s /etc/ssl/certs/java/cacerts "${JAVA_HOME}/lib/security/cacerts"
+
   - nvm install $(cat .nvmrc)
   - nvm use
   - npm ci
   - npm i cloc -g
+
+script:
+  - ./gradlew build --scan -s
 
 jobs:
   include:
