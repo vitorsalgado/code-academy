@@ -12,7 +12,7 @@ Some trainings may require specific tools. Check each training requirements for 
 - Java 8+;
 - Docker;
 - Google Code Formatter (Optional)
-  - Use available plugins for IDEs like IntelliJ and Eclipse or use formatter files available on folder **.support** on project root directory.
+  - Use available plugins for IDEs like IntelliJ and Eclipse or use formatter files available on folder **.quality_tools/code_style** on project root directory.
 
 ## Target Audience
 The idea is eventually target all developers, from juniors to more skilled ones. 
