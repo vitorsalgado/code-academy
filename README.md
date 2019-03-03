@@ -28,3 +28,7 @@ Eg.: Let's say you choose the training **WebServer Frameworkless**, contained in
 - After done, create a **Pull Request** to this repository. Follow the Pull Request guidelines and describe what you have done and why;
 - With the Pull Request open, the training code will be evaluated and a proper feedback will be provided;
 - Some trainings may have a automated script for a pre evaluation fo the Pull Request.
+
+## Trainings
+- [Maven To Gradle](./maven_to_gradle)
+- [Frameworkless WebServer](./webserver_frameworkless)
