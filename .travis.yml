@@ -29,7 +29,7 @@ jobs:
       name: "Training Core Contributions"
       if: branch = master AND type != pull_request AND fork = false
       script:
-        - ./gradlew check --info
+        - ./gradlew build -x test --info
 
     - stage: training
       name: "Completed Training Evaluation"
