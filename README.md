@@ -1,9 +1,14 @@
 # Code Academy
-[![Build Status](https://travis-ci.org/vitorsalgado/code-academy.svg?branch=master)](https://travis-ci.org/vitorsalgado/code-academy)  
+[![Build Status](https://travis-ci.org/vitorsalgado/code-academy.svg?branch=master)](https://travis-ci.org/vitorsalgado/code-academy) 
+[![node version][node-image]][node-url] 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)  
 
 Repository dedicated for anyone willing to improve your knowledge in software development, architecture, design patterns, tests and so on.  
 Currently, this coding academy will be focused in backend, specially Java.  
 Keep reading to know how to apply for trainings and how to contribute to this academy core.  
+
+[node-image]: https://img.shields.io/badge/node.js-%3E=_10.15.2-green.svg?style=flat-square
+[node-url]: https://nodejs.org/download/release/v10.15.2/
 
 ## Trainings
 - [Maven To Gradle](./maven_to_gradle)
