@@ -1,0 +1,26 @@
+plugins {
+  id "com.gradle.build-scan" version "2.2.1"
+}
+
+allprojects {
+  apply plugin: 'java'
+
+  group = 'com.example'
+  version = '1.0.0'
+
+  sourceCompatibility = 1.8
+
+  repositories {
+    mavenCentral()
+  }
+
+  buildScan {
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+  }
+}
+
+wrapper {
+  gradleVersion = '5.2.1'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}

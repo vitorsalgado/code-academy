@@ -1,21 +1,47 @@
-language: node_js
+language: java
 
-sudo: required
+jdk: openjdk11
 
 services:
   - docker
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  npm: true
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+before_install:
+  - rm "${JAVA_HOME}/lib/security/cacerts"
+  - ln -s /etc/ssl/certs/java/cacerts "${JAVA_HOME}/lib/security/cacerts"
+
+  - nvm install $(cat .nvmrc)
+  - nvm use
+  - npm ci
+  - npm i cloc -g
+
 jobs:
   include:
     - stage: core
-      if: branch = master
+      name: "Training Core Contributions"
+      if: branch = master AND type != pull_request AND fork = false
       script:
-        - echo "CORE HERE"
+        - ./gradlew check --info
 
     - stage: training
+      name: "Completed Training Evaluation"
       if: type = pull_request
       script:
+        # Capture the chosen training by the feature branch name, which must be the same
         - TRAINING=$TRAVIS_PULL_REQUEST_BRANCH
-        - echo $TRAVIS_PULL_REQUEST_BRANCH
-        - echo $TRAINING
-        - node training/$TRAINING/index.js
+        - echo "Pre Evaluation and Stastistics for $TRAINING"
+
+        # General training code statistics
+        - cloc $TRAINING
+
+        # Pre evaluate training
+        - ./index.js evaluate $TRAINING
+        # - cd $TRAINING && node evaluate-training
