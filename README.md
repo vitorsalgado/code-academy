@@ -5,6 +5,10 @@ Repository dedicated for anyone willing to improve your knowledge in software de
 Currently, this coding academy will be focused in backend, specially Java.  
 Keep reading to know how to apply for trainings and how to contribute to this academy core.  
 
+## Trainings
+- [Maven To Gradle](./maven_to_gradle)
+- [Frameworkless WebServer](./webserver_frameworkless)
+
 ## Requirements
 Below the basic tooling required.  
 Some trainings may require specific tools. Check each training requirements for more information.
@@ -28,7 +32,3 @@ Eg.: Let's say you choose the training **WebServer Frameworkless**, contained in
 - After done, create a **Pull Request** to this repository. Follow the Pull Request guidelines and describe what you have done and why;
 - With the Pull Request open, the training code will be evaluated and a proper feedback will be provided;
 - Some trainings may have a automated script for a pre evaluation fo the Pull Request.
-
-## Trainings
-- [Maven To Gradle](./maven_to_gradle)
-- [Frameworkless WebServer](./webserver_frameworkless)
