@@ -9,7 +9,7 @@ Keep reading to know how to apply for trainings and how to contribute to this ac
 [node-url]: https://nodejs.org/download/release/v10.15.2/
 
 ## Trainings
-- [Maven To Gradle](./maven_to_gradle)
+- [Maven To Gradle](build_systems/maven_to_gradle)
 - [Frameworkless WebServer](./webserver_frameworkless)
 
 ## Requirements

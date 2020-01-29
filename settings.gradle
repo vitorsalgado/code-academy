@@ -1,4 +1,9 @@
 rootProject.name = 'Code Academy'
 
 include 'sample'
-include 'webserver_frameworkless'
+
+// Challenges
+include 'challenges:webserver_frameworkless'
+
+// Design Patterns
+include 'design_patterns:builder'
